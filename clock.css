@@ -1,0 +1,134 @@
+@-webkit-keyframes blink {
+  0%     { opacity: 0 } 50% { opacity: 0 }
+  50.01% { opacity: 1 } 100% { opacity: 1 }
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  display: -moz-box;
+  display: -webkit-box;
+  display: box;
+
+	-moz-box-orient : horizontal;
+	-moz-box-pack : center;
+	-moz-box-align : center;
+	
+	-webkit-box-orient : horizontal;
+	-webkit-box-pack : center;
+	-webkit-box-align : center;
+	
+	box-orient : horizontal;
+	box-pack : center;
+	box-align : center;
+		
+	background-color: #000;
+	
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,.4)));
+	background-image: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0, .4));
+	
+	-moz-transition-property: background-color;
+	-moz-transition-duration: 1s;
+	-moz-transition-timing-function: linear;
+	-webkit-transition: background-color 1s linear; 
+	-o-transition: background-color 1s linear; 
+	transition: background-color 1s linear; 
+	
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+}
+
+time {
+	display: block;
+  color: rgba(255,255,255,1); 
+	text-shadow: 0 0 15px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.3);
+  text-align: center;
+	font-family: "Josefin Slab", Arial, sans-serif;
+}
+
+time .digit, time .colon {
+  display: block;
+  position: relative;
+  float: left;
+  font-size: 180px;
+  width: 100px;
+	width: .6em;
+}
+
+time .colon {
+  /*margin-top: -18px;*/
+	font-size: 160px;
+	text-decoration: blink;
+  -webkit-animation: blink 0.5s infinite linear alternate;
+}
+
+nav {
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 160px;
+	
+	opacity: 0.2;
+	
+	margin: 0;
+	padding: 8px;
+	background: #fff;
+	line-height: 100%;
+		
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+	
+	-moz-transition-property: opacity 500ms linear;
+	-webkit-transition: opacity 500ms linear; 
+	-o-transition: opacity 500ms linear; 
+	transition: opacity 500ms linear;
+	
+	overflow: hidden;
+}
+nav:hover {
+	opacity: 0.8;
+}
+nav h1 {
+	font-family: Arial, sans-serif;
+	font-size: 12px;
+	padding: 0 0 0 20px;
+}
+nav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	border-top: 1px solid #eee;
+	height: 0;
+	-moz-transition-property: height 200ms linear;
+	-webkit-transition: height 200ms linear; 
+	-o-transition: height 200ms linear; 
+	transition: height 200ms linear;
+}
+nav:hover ul {
+	height: 650px;
+}
+nav li {
+	cursor: pointer;
+
+	font-weight: bold;
+	color: #0078ff;
+	text-decoration: none;
+	display: block;
+	padding:  8px 20px;
+	margin: 0;
+}
+nav li:hover {
+	background: #0078ff url(img/gradient.png) repeat-x 0 -100px !important;
+	color: #fff !important;
+
+	text-shadow: 0 1px 1px rgba(0,0,0, .1);
+}

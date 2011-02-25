@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"> 
+		<title>Color Clock</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.0/jquery.min.js"></script>
+		<script src="clock.js"></script>
+		<link rel="stylesheet" href="clock.css" type="text/css" media="screen">
+	</head>
+	<body>
+		<!-- based on http://brisy.info/colors/ -->
+		
+		<time datetime="00:00:00">
+			<span class="digit" id="digit1">
+				0
+			</span>
+			<span class="digit" id="digit2">
+				0
+			</span>
+			<span class="colon" id="colon1">
+				:
+			</span>
+			<span class="digit" id="digit3">
+				0
+			</span>
+			<span class="digit" id="digit4">
+				0
+			</span>
+			<span class="colon" id="colon2">
+				:
+			</span>
+			<span class="digit" id="digit5">
+				0
+			</span>
+			<span class="digit" id="digit6">
+				0
+			</span>
+		</time>
+		
+		<nav>
+			<h1>Select clock font</h1>
+			<ul>
+				<li>Default</li>
+			</ul>
+		</nav>
+
+		<script>
+			var fontsToLoad = [ 'Kreon', 'Kenia', 'Ubuntu', 'Geo', 'Just Another Hand', 'Chewy', 'Raleway:100', 'Permanent Marker', 
+													'Gruppo', 'Orbitron', 'Merriweather', 'Josefin Slab', 'Copse', 'Tinos', 'IM Fell', 'Arvo', 'Cardo', 
+													'Allerta Stencil', 'Philosopher', 'Neuton', 'Yanone', 'Molengo' ];
+			var fontList = $("nav ul");
+      var WebFontConfig = {
+        google: { families: fontsToLoad },
+				fontactive: function(fontFamily, fontDescription) {
+			    fontList.append("<li>" + fontFamily + "</li>");
+			  }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>				
+	</body>
+</html>
