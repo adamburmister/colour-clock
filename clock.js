@@ -31,9 +31,12 @@ $(function() {
 
   setBackgroundColorToTime();
 
-  window.setInterval(setBackgroundColorToTime, 1000);
+	// Start the clock running
+	var runClock = function(){ window.setInterval(setBackgroundColorToTime, 1000); }
+	// Sync clock to sys clock
+  window.setTimeout(runClock, 999-(new Date()).getMilliseconds());
 
-	DEFAULT_FONT_FACE = "'Josefin Slab', Arial, sans-serif";
+	DEFAULT_FONT_FACE = "'Permanent Marker', Arial, sans-serif";
 	var fontList = $("nav ul");
 	fontList.delegate("li", "click", function() {
 		var face = $(this).text();

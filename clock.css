@@ -48,7 +48,7 @@ time {
   color: rgba(255,255,255,1); 
 	text-shadow: 0 0 15px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.3);
   text-align: center;
-	font-family: "Josefin Slab", Arial, sans-serif;
+	font-family: "Permanent Marker", Arial, sans-serif;
 }
 
 time .digit, time .colon {
@@ -73,7 +73,7 @@ nav {
 	top: 20px;
 	width: 160px;
 	
-	opacity: 0.2;
+	opacity: 0;
 	
 	margin: 0;
 	padding: 8px;
@@ -93,6 +93,9 @@ nav {
 	transition: opacity 500ms linear;
 	
 	overflow: hidden;
+}
+body:hover nav {
+	opacity: 0.3;
 }
 nav:hover {
 	opacity: 0.8;
@@ -118,7 +121,6 @@ nav:hover ul {
 }
 nav li {
 	cursor: pointer;
-
 	font-weight: bold;
 	color: #0078ff;
 	text-decoration: none;
@@ -135,24 +137,29 @@ nav li:hover {
 
 
 .ribbon {
-  background-color: #a00;
+  background-color: rgba(0,0,0,0.5);
   overflow: hidden;
   /* top left corner */
   position: absolute;
-  left: -6em;
-  top: 5em;
+  left: -4.5em;
+  top: 3.5em;
   /* 45 deg ccw rotation */
   -moz-transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   /* shadow */
   -moz-box-shadow: 0 0 1em #888;
   -webkit-box-shadow: 0 0 1em #888;
+	opacity: 0.2;
+	-moz-transition-property: opacity 200ms linear;
+	-webkit-transition: opacity 200ms linear; 
+	-o-transition: opacity 200ms linear; 
+	transition: opacity 200ms linear;
 }
 .ribbon a {
-  border: 1px solid #faa;
+  border: 1px solid #fff;
   color: #fff;
   display: block;
-  font: bold 18px 'Helvetiva Neue', Helvetica, Arial, sans-serif;
+  font: bold 14px 'Helvetiva Neue', Helvetica, Arial, sans-serif;
   margin: 0.05em 0 0.075em 0;
   padding: 0.5em 3.5em;
   text-align: center;
@@ -160,4 +167,6 @@ nav li:hover {
   /* shadow */
   text-shadow: 0 0 0.5em #444;
 }
-
+body:hover .ribbon {
+	opacity: 1;
+}
