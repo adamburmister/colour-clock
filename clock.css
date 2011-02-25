@@ -97,7 +97,7 @@ nav {
 body:hover nav {
 	opacity: 0.3;
 }
-nav:hover {
+body:hover nav:hover {
 	opacity: 0.8;
 }
 nav h1 {
